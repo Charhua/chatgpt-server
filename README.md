@@ -98,7 +98,15 @@ src
 | content         | String  | true  | 问题内容                                                     |
 | isFollow        | Boolean | true  | 是否跟随历史消息，默认值`false`                              |
 | parentMessageId | String  | false | 跟随历史消息的id，当`isFollow`为`true`时必传                 |
-| opts            | Object  | false | 其他参数，详见：https://github.com/transitive-bullshit/chatgpt-api，该参数会合并`new ChatGPTAPI`时传入的参数 |
+| opts            | Object  | false | 其他参数，详见：https://github.com/transitive-bullshit/chatgpt-api    该参数会合并`new ChatGPTAPI`时传入的参数 |
+
+2. `/api/v1/token/getInfo`：请求方式`GET` 请求体格式：Query-Param
+
+| 字段名   | 值类型 | 必传 | 说明                             |
+| -------- | ------ | ---- | -------------------------------- |
+| type     | String | true | 类型，1为获取token，2为刷新token |
+| email    | String | true | openAI账号邮箱                   |
+| password | String | true | 密码                             |
 
 
 
@@ -106,15 +114,15 @@ src
 
 感谢以下库提供核心服务的支持：
 
-- [transitive-bullshit/chatgpt-api]: https://github.com/transitive-bullshit/chatgpt-api
-
-- [allanoricil/chat-gpt-authenticator]: https://github.com/AllanOricil/chat-gpt-authenticator
+- [transitive-bullshit/chatgpt-api](https://github.com/transitive-bullshit/chatgpt-api)
+- [allanoricil/chat-gpt-authenticator](https://github.com/AllanOricil/chat-gpt-authenticator)
 
 
 
 ### 构建和部署
 
-可参考Nest.js项目的构建部署方式，以下为作者提供简单的方式：
+> 可参考Nest.js项目的构建部署方式，以下为作者提供简单的方式
+>
 
 #### 1、构建
 
@@ -139,6 +147,12 @@ npm run build
    ```shell
    npm run start:prod
    ```
+
+
+
+### LICENSE
+
+MIT
 
 
 
